@@ -31,6 +31,28 @@ h2 {
   margin: 0;
 }
 
+@-webkit-keyframes progress_heart {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes progress_heart {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
 @-webkit-keyframes duration_loader {
   0% {
     -webkit-transform: scale(1);
@@ -231,8 +253,10 @@ h2 {
             box-shadow: 3px 3px 5px #cecece;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: translate 400ms;
-    transition: translate 400ms;
+    -webkit-transition: -webkit-transform 400ms;
+    transition: -webkit-transform 400ms;
+    transition: transform 400ms;
+    transition: transform 400ms, -webkit-transform 400ms;
   }
   #intro > input:hover {
     -webkit-transform: scale(1.15);
@@ -347,6 +371,7 @@ h2 {
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+    font-size: 200%;
   }
   #solid:hover {
     font-size: 154%;
@@ -354,6 +379,8 @@ h2 {
     background-image: linear-gradient(to top, #FF79DA, #9356DC);
     background-clip: text;
     -webkit-background-clip: text;
+    -webkit-animation: progress_heart 300ms linear;
+            animation: progress_heart 300ms linear;
   }
   .card_image {
     position: relative;
@@ -390,7 +417,7 @@ h2 {
   .card_info_text > h3 {
     width: 100%;
     font-size: 100%;
-    margin: 4% 0 0 0;
+    margin: 15px 0 0 0;
     font-weight: bolder;
   }
   /*FOOTER*/
@@ -543,7 +570,7 @@ h2 {
     margin: 5% 0 0 0;
     border: none;
     border-radius: 30px;
-    width: 60%;
+    width: 40%;
     height: 60px;
     color: white;
     font-size: 100%;
@@ -659,11 +686,15 @@ h2 {
     translate: transform 500ms;
     cursor: pointer;
   }
+  #regular {
+    z-index: 1;
+  }
   #solid {
     z-index: 2;
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+    font-size: 200%;
   }
   #solid:hover {
     font-size: 154%;
@@ -671,6 +702,8 @@ h2 {
     background-image: linear-gradient(to top, #FF79DA, #9356DC);
     background-clip: text;
     -webkit-background-clip: text;
+    -webkit-animation: progress_heart 300ms linear;
+            animation: progress_heart 300ms linear;
   }
   .card_image {
     position: relative;
@@ -707,7 +740,7 @@ h2 {
   .card_info_text > h3 {
     width: 100%;
     font-size: 100%;
-    margin: 4% 0 0 0;
+    margin: 15px 0 0 0;
     font-weight: bolder;
   }
   /*FOOTER*/
@@ -998,11 +1031,15 @@ h2 {
     translate: transform 500ms;
     cursor: pointer;
   }
+  #regular {
+    z-index: 1;
+  }
   #solid {
     z-index: 2;
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+    font-size: 200%;
   }
   #solid:hover {
     font-size: 154%;
@@ -1010,6 +1047,8 @@ h2 {
     background-image: linear-gradient(to top, #FF79DA, #9356DC);
     background-clip: text;
     -webkit-background-clip: text;
+    -webkit-animation: progress_heart 300ms linear;
+            animation: progress_heart 300ms linear;
   }
   .card_image {
     position: relative;
@@ -1046,7 +1085,7 @@ h2 {
   .card_info_text > h3 {
     width: 100%;
     font-size: 100%;
-    margin: 4% 0 0 0;
+    margin: 20px 0 0 0;
     font-weight: bolder;
   }
   /*FOOTER*/

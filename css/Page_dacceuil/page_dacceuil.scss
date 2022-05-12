@@ -42,6 +42,16 @@ $color-tertiary: #99E2D0;
     color: white;
 }
 
+@keyframes progress_heart {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
 @keyframes duration_loader {
     0% {
         transform: scale(1);
@@ -81,7 +91,6 @@ $color-tertiary: #99E2D0;
         height: 40%;
     }
 }
-
 
 
 /*MOBILE*/
@@ -171,7 +180,7 @@ $color-tertiary: #99E2D0;
                     background-image: linear-gradient(to bottom right, $color-secondary, $color-primary );
                     box-shadow: 3px 3px 5px rgb(206, 206, 206);
                     transform: scale(1);
-                    transition: translate 400ms;
+                    transition: transform 400ms;
                     &:hover{
                         transform: scale(1.15);
                     }
@@ -265,23 +274,24 @@ $color-tertiary: #99E2D0;
         }
     }
 
-        #regular {
-            z-index: 1;
-        }
+    #regular {
+        z-index: 1;
+    }
 
-        #solid {
-            z-index: 2;
-            color: transparent;
+    #solid {
+        z-index: 2;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-size: 200%;
+        &:hover {
+            font-size: 154%;
+            background-image: linear-gradient(to top, $color-secondary, $color-primary );
             background-clip: text;
             -webkit-background-clip: text;
-            &:hover {
-                font-size: 154%;
-                background-image: linear-gradient(to top, $color-secondary, $color-primary );
-                background-clip: text;
-                -webkit-background-clip: text;
-            }   
-        }
-        
+            animation: progress_heart 300ms linear;
+        }   
+    }
 
     .card_image {
         position: relative;
@@ -315,7 +325,7 @@ $color-tertiary: #99E2D0;
         >h3 {
             width: 100%;
             font-size: 100%;
-            margin: 4% 0 0 0;
+            margin: 15px 0 0 0;
             font-weight: bolder;
         }          
     }
@@ -437,7 +447,7 @@ $color-tertiary: #99E2D0;
                     margin: 5% 0 0 0;
                     border: none;
                     border-radius: 30px;
-                    width: 60%;
+                    width: 40%;
                     height: 60px;
                     color: white;
                     font-size: 100%;
@@ -537,16 +547,22 @@ $color-tertiary: #99E2D0;
         }
     }
 
+    #regular {
+        z-index: 1;
+    }
+
     #solid {
         z-index: 2;
         color: transparent;
         background-clip: text;
         -webkit-background-clip: text;
+        font-size: 200%;
         &:hover {
             font-size: 154%;
             background-image: linear-gradient(to top, $color-secondary, $color-primary );
             background-clip: text;
             -webkit-background-clip: text;
+            animation: progress_heart 300ms linear;
         }   
     }
 
@@ -582,7 +598,7 @@ $color-tertiary: #99E2D0;
         >h3 {
             width: 100%;
             font-size: 100%;
-            margin: 4% 0 0 0;
+            margin: 15px 0 0 0;
             font-weight: bolder;
         }          
     }
@@ -627,120 +643,122 @@ $color-tertiary: #99E2D0;
 /*DESKTOP*/
 
 @media all and (min-width : 991px) {
-    /*HEADER*/
+/*HEADER*/
     
-        header {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         }
     
-        .logo_black {
-            object-fit: contain;
-            width: 20%;
-            padding-top: 2%;
-        }
+    .logo_black {
+        object-fit: contain;
+        width: 20%;
+        padding-top: 2%;
+    }
     
         
-    /*MAIN*/
+/*MAIN*/
     
-        #search {
-            height: 1px;
-            margin: 2% 0 0 0;
-            padding: 2% 0 2% 20%;
+    #search {
+        height: 1px;
+        margin: 2% 0 0 0;
+        padding: 2% 0 2% 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(234, 234, 234);
+        box-shadow: 0 -2px 2px rgb(206, 206, 206);
+    
+        >i {
+            margin-right: 3%;
+            color: rgb(53, 53, 53);
+        }
+
+        >input {
+            width: 40%;
+            border: none;
+            background-color: rgb(234, 234, 234);
+            outline: none;
+            font-size: 100%;
+            font-weight: bold;
+            color: rgb(53, 53, 53)
+        }  
+
+        ::placeholder {
+            color:rgb(53, 53, 53)
+        }
+    }
+    
+    #intro {
+        width: 100%;
+        background-color: rgb(246, 246, 246);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5%;
+            
+        >h1 {
+            width: 70%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            background-color: rgb(234, 234, 234);
-            box-shadow: 0 -2px 2px rgb(206, 206, 206);
-    
-            >i {
-                margin-right: 3%;
-                color: rgb(53, 53, 53);
-            }
-                >input {
-                    width: 40%;
-                    border: none;
-                    background-color: rgb(234, 234, 234);
-                    outline: none;
-                    font-size: 100%;
-                    font-weight: bold;
-                    color: rgb(53, 53, 53)
-                }  
-                    ::placeholder {
-                        color:rgb(53, 53, 53)
-                    }
+            text-align: center;
+            margin: 5% 0 0 0;
+            font-size: 150%;
+            line-height: 1.2;
         }
     
-        #intro {
+        >p {
             width: 100%;
-            background-color: rgb(246, 246, 246);
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 5%;
-            
-            >h1 {
-                width: 70%;
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                margin: 5% 0 0 0;
-                font-size: 150%;
-                line-height: 1.2;
-            }
-    
-                >p {
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    text-align: center;
-                    color: rgb(96, 96, 96);
-                    line-height: 1.2;
-                }
-    
-                    >input {
-                        margin: 2% 0 0 0;
-                        border: none;
-                        border-radius: 30px;
-                        width: 20%;
-                        height: 60px;
-                        color: white;
-                        font-size: 100%;
-                        background-image: linear-gradient(to bottom right, $color-secondary, $color-primary );
-                        box-shadow: 3px 3px 5px rgb(206, 206, 206);
-                        transform: scale(1);
-                        transition: translate 400ms;
-                        &:hover{
-                            transform: scale(1.15);
-                        }
-                    }
+            justify-content: center;
+            text-align: center;
+            color: rgb(96, 96, 96);
+            line-height: 1.2;
         }
     
-        #choice {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+        >input {
+            margin: 2% 0 0 0;
+            border: none;
+            border-radius: 30px;
+            width: 20%;
+            height: 60px;
+            color: white;
+            font-size: 100%;
+            background-image: linear-gradient(to bottom right, $color-secondary, $color-primary );
+            box-shadow: 3px 3px 5px rgb(206, 206, 206);
+            transform: scale(1);
+            transition: translate 400ms;
+            &:hover{
+            transform: scale(1.15);
+            }           
+        }
+    }
+    
+    #choice {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
 
-                h2 {
-                    padding: 3% 0 0 5%;
-                    font-size: 160%;
-                    font-weight: bolder;
-                    margin: 0;
-                }
+        h2 {
+            padding: 3% 0 0 5%;
+            font-size: 160%;
+            font-weight: bolder;
+            margin: 0;
+            }
     
-                >ul {
-                    padding: 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin: 0 2% 0 2%;
-                    :hover {
-                        background-color: rgb(245, 237, 255);
-                    }
-                }              
-        }
+        >ul {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 2% 0 2%;
+            :hover {
+                background-color: rgb(245, 237, 255);
+            }
+        }              
+    }
     
         .choice_list {
             border-radius: 15px;
@@ -826,16 +844,22 @@ $color-tertiary: #99E2D0;
             }
         }
 
+        #regular {
+            z-index: 1;
+        }
+    
         #solid {
             z-index: 2;
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
+            font-size: 200%;
             &:hover {
                 font-size: 154%;
                 background-image: linear-gradient(to top, $color-secondary, $color-primary );
                 background-clip: text;
                 -webkit-background-clip: text;
+                animation: progress_heart 300ms linear;
             }   
         }
     
@@ -871,7 +895,7 @@ $color-tertiary: #99E2D0;
             >h3 {
                 width: 100%;
                 font-size: 100%;
-                margin: 4% 0 0 0;
+                margin: 20px 0 0 0;
                 font-weight: bolder;
             }          
         }

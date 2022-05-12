@@ -30,6 +30,46 @@ h1 {
   font-weight: 500;
 }
 
+@-webkit-keyframes check_input {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 15%;
+  }
+}
+
+@keyframes check_input {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 15%;
+  }
+}
+
+@-webkit-keyframes menu_check {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes menu_check {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @media all and (max-width: 640px) {
   /*HEADER*/
   header {
@@ -63,8 +103,7 @@ h1 {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
-    height: auto;
-    max-height: 20rem;
+    height: 350px;
     margin-top: 2%;
   }
   main section {
@@ -72,7 +111,7 @@ h1 {
     width: 100%;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    margin-top: -15%;
+    margin-top: -8%;
     background-color: #f6f6f6;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -118,8 +157,10 @@ h1 {
             box-shadow: 3px 3px 5px #cecece;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: translate 400ms;
-    transition: translate 400ms;
+    -webkit-transition: -webkit-transform 400ms;
+    transition: -webkit-transform 400ms;
+    transition: transform 400ms;
+    transition: transform 400ms, -webkit-transform 400ms;
   }
   main .commander:hover {
     -webkit-transform: scale(1.15);
@@ -160,19 +201,45 @@ h1 {
         -ms-flex-pack: center;
             justify-content: center;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 25px;
     margin-top: 5%;
     width: 100%;
     -webkit-box-shadow: 3px 3px 8px #cecece;
             box-shadow: 3px 3px 8px #cecece;
+    cursor: pointer;
   }
-  .section_menu > div > input {
-    -webkit-appearance: none;
+  .section_menu > div:hover {
+    background-color: #93e1ce;
+  }
+  .section_menu > div:hover > nav {
+    background-color: white;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  .section_menu > div:hover > div {
+    -webkit-animation: check_input 1s forwards;
+            animation: check_input 1s forwards;
+    font-size: 130%;
+  }
+  .section_menu > div:hover > div > i {
+    -webkit-animation: menu_check 300ms linear;
+            animation: menu_check 300ms linear;
+  }
+  .section_menu > div > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    width: 7%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
   }
   .section_menu > div > nav {
     width: 100%;
     padding: 2% 0 2% 3%;
-    cursor: pointer;
   }
   .section_menu > div > nav > h3 {
     font-size: 100%;
@@ -190,6 +257,7 @@ h1 {
   }
   .section_menu > div > nav > p > span {
     font-weight: bold;
+    margin-right: 3%;
   }
   /*FOOTER*/
   footer {
@@ -265,15 +333,15 @@ h1 {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
-    height: 250px;
     margin-top: 2%;
+    height: 550px;
   }
   main section {
     position: relative;
     width: 100%;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    margin-top: -15%;
+    margin-top: -10%;
     background-color: #f6f6f6;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -319,8 +387,10 @@ h1 {
             box-shadow: 3px 3px 5px #cecece;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: translate 400ms;
-    transition: translate 400ms;
+    -webkit-transition: -webkit-transform 400ms;
+    transition: -webkit-transform 400ms;
+    transition: transform 400ms;
+    transition: transform 400ms, -webkit-transform 400ms;
   }
   main .commander:hover {
     -webkit-transform: scale(1.15);
@@ -340,7 +410,7 @@ h1 {
     margin: 5% 0 0 0;
     font-size: 100%;
     font-weight: 100;
-    width: 12%;
+    width: 6%;
     border-bottom: 3px solid #93e1ce;
   }
   .section_menu > div {
@@ -361,14 +431,41 @@ h1 {
         -ms-flex-pack: center;
             justify-content: center;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 25px;
     margin-top: 5%;
     width: 100%;
     -webkit-box-shadow: 3px 3px 8px #cecece;
             box-shadow: 3px 3px 8px #cecece;
   }
-  .section_menu > div > input {
-    -webkit-appearance: none;
+  .section_menu > div:hover {
+    background-color: #93e1ce;
+  }
+  .section_menu > div:hover > nav {
+    background-color: white;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  .section_menu > div:hover > div {
+    -webkit-animation: check_input 1s forwards;
+            animation: check_input 1s forwards;
+    font-size: 150%;
+  }
+  .section_menu > div:hover > div > i {
+    -webkit-animation: menu_check 400ms linear;
+            animation: menu_check 400ms linear;
+  }
+  .section_menu > div > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    width: 2%;
+    height: 100%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
   }
   .section_menu > div > nav {
     width: 100%;
@@ -391,6 +488,7 @@ h1 {
   }
   .section_menu > div > nav > p > span {
     font-weight: bold;
+    margin-right: 3%;
   }
   /*FOOTER*/
   footer {
@@ -424,7 +522,7 @@ h1 {
             align-items: center;
   }
   footer > nav > i {
-    width: 8%;
+    width: 4%;
   }
   footer > nav > a {
     text-decoration: none;
@@ -453,28 +551,35 @@ h1 {
     padding-top: 2%;
   }
   header > a i {
-    font-size: 120%;
+    font-size: 200%;
   }
   .logo_black {
     -o-object-fit: contain;
        object-fit: contain;
-    width: 40%;
+    width: 30%;
     padding-top: 2%;
+    padding-bottom: 1%;
   }
   /*MAIN*/
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 8% 0 8%;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#99E2D0), color-stop(#FF79DA), to(#9356DC));
+    background-image: linear-gradient(to top, #99E2D0, #FF79DA, #9356DC);
+  }
   main > img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    width: 100%;
-    height: 700px;
-    margin-top: 2%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 50%;
+    padding-top: 2%;
+    background-color: #cccccc;
   }
   main section {
-    position: relative;
     width: 100%;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    margin-top: -15%;
+    padding-top: 2%;
+    margin-left: -3%;
     background-color: #f6f6f6;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -486,6 +591,7 @@ h1 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    border-radius: 30px;
   }
   main section #section_title {
     display: -webkit-box;
@@ -520,8 +626,10 @@ h1 {
             box-shadow: 3px 3px 5px #cecece;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: translate 400ms;
-    transition: translate 400ms;
+    -webkit-transition: -webkit-transform 400ms;
+    transition: -webkit-transform 400ms;
+    transition: transform 400ms;
+    transition: transform 400ms, -webkit-transform 400ms;
   }
   main .commander:hover {
     -webkit-transform: scale(1.15);
@@ -541,40 +649,8 @@ h1 {
     margin: 5% 0 0 0;
     font-size: 100%;
     font-weight: 100;
-    width: 12%;
+    width: 6%;
     border-bottom: 3px solid #93e1ce;
-  }
-  @-webkit-keyframes check_nav {
-    0% {
-      width: 100%;
-    }
-    100% {
-      width: 80%;
-    }
-  }
-  @keyframes check_nav {
-    0% {
-      width: 100%;
-    }
-    100% {
-      width: 80%;
-    }
-  }
-  @-webkit-keyframes check_input {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 10%;
-    }
-  }
-  @keyframes check_input {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 10%;
-    }
   }
   .section_menu > div {
     display: -webkit-box;
@@ -594,27 +670,49 @@ h1 {
         -ms-flex-pack: center;
             justify-content: center;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 25px;
     margin-top: 5%;
     width: 100%;
     -webkit-box-shadow: 3px 3px 8px #cecece;
             box-shadow: 3px 3px 8px #cecece;
-  }
-  .section_menu > div > input {
-    -webkit-appearance: none;
-    height: 100%;
-    background-color: #93e1ce;
-    border: 1px solid black;
-  }
-  .section_menu > div > nav {
-    border: 1px solid black;
-    width: 100%;
-    padding: 2% 0 2% 3%;
     cursor: pointer;
   }
-  .section_menu > div > nav:hover {
-    -webkit-animation: check_nav 2s forwards;
-            animation: check_nav 2s forwards;
+  .section_menu > div:hover {
+    background-color: #93e1ce;
+  }
+  .section_menu > div:hover > nav {
+    background-color: white;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  .section_menu > div:hover > div {
+    -webkit-animation: check_input 1s forwards;
+            animation: check_input 1s forwards;
+    font-size: 150%;
+  }
+  .section_menu > div:hover > div > i {
+    -webkit-animation: menu_check 400ms linear;
+            animation: menu_check 400ms linear;
+  }
+  .section_menu > div > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    width: 3%;
+    height: 100%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  .section_menu > div > nav {
+    width: 100%;
+    padding: 2% 0 2% 3%;
   }
   .section_menu > div > nav > h3 {
     font-size: 100%;
@@ -632,6 +730,7 @@ h1 {
   }
   .section_menu > div > nav > p > span {
     font-weight: bold;
+    margin-right: 3%;
   }
   /*FOOTER*/
   footer {
@@ -647,7 +746,7 @@ h1 {
             flex-direction: column;
   }
   footer #logo_white {
-    padding: 2% 0 5% 0;
+    padding: 0 0 3% 0;
     -webkit-filter: brightness(20);
             filter: brightness(20);
   }
@@ -665,7 +764,7 @@ h1 {
             align-items: center;
   }
   footer > nav > i {
-    width: 8%;
+    width: 3%;
   }
   footer > nav > a {
     text-decoration: none;
