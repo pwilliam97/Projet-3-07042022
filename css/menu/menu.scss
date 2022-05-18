@@ -57,6 +57,17 @@ $color-tertiary: #99E2D0;
 
 }
 
+@keyframes fondue {
+    0% { 
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 
 @media all and (max-width : 640px) {
@@ -148,6 +159,8 @@ $color-tertiary: #99E2D0;
             display: flex;
             flex-direction: column;
             width: 90%;
+            
+            
 
             >h2 {
                 margin: 5% 0 0 0;
@@ -155,7 +168,6 @@ $color-tertiary: #99E2D0;
                 font-weight: 100;
                 width: 12%;
                 border-bottom: 3px solid rgb(147, 225, 206);
-                
             }
                    
             >div{
@@ -169,7 +181,13 @@ $color-tertiary: #99E2D0;
                 margin-top: 5%;
                 width: 100%;
                 box-shadow: 3px 3px 8px rgb(206, 206, 206);
-                cursor: pointer;
+                cursor: pointer;     
+                animation: fondue 2s linear both;
+                @for $i from 2 to 6 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: 100ms * $i;
+                    }
+                }
                 &:hover{ 
                     background-color: rgb(147, 225, 206);
                     
@@ -202,13 +220,13 @@ $color-tertiary: #99E2D0;
                     padding: 2% 0 2% 3%;            
 
                     >h3 {
-                        font-size: 100%;
+                        font-size: 120%;
                         margin: 0;
                     }
 
                     >p {
                         margin: 0;
-                        font-size: 80%;
+                        font-size: 100%;
                         display: flex;
                         justify-content: space-between;
 
@@ -346,6 +364,7 @@ $color-tertiary: #99E2D0;
             display: flex;
             flex-direction: column;
             width: 90%;
+            
 
             >h2 {
                 margin: 5% 0 0 0;
@@ -367,6 +386,12 @@ $color-tertiary: #99E2D0;
                 margin-top: 5%;
                 width: 100%;
                 box-shadow: 3px 3px 8px rgb(206, 206, 206);
+                animation: fondue 2s linear both;
+                @for $i from 2 to 6 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: 100ms * $i;
+                    }
+                }
                 &:hover{ 
                     background-color: rgb(147, 225, 206);
                     >nav{
@@ -400,13 +425,13 @@ $color-tertiary: #99E2D0;
                     cursor: pointer; 
 
                     >h3 {
-                        font-size: 100%;
+                        font-size: 120%;
                         margin: 0;
                     }
 
                     >p {
                         margin: 0;
-                        font-size: 80%;
+                        font-size: 100%;
                         display: flex;
                         justify-content: space-between;
 
@@ -570,6 +595,12 @@ $color-tertiary: #99E2D0;
                 width: 100%;
                 box-shadow: 3px 3px 8px rgb(206, 206, 206);
                 cursor: pointer; 
+                animation: fondue 2s linear both;
+                @for $i from 2 to 6 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: 100ms * $i;
+                    }
+                }
                 &:hover{ 
                     background-color: rgb(147, 225, 206);
                     >nav{
@@ -605,13 +636,13 @@ $color-tertiary: #99E2D0;
                     
 
                     >h3 {
-                        font-size: 100%;
+                        font-size: 120%;
                         margin: 0;
                     }
 
                     >p {
                         margin: 0;
-                        font-size: 80%;
+                        font-size: 100%;
                         display: flex;
                         justify-content: space-between;
 

@@ -379,8 +379,8 @@ h2 {
     background-image: linear-gradient(to top, #FF79DA, #9356DC);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-animation: progress_heart 300ms linear;
-            animation: progress_heart 300ms linear;
+    -webkit-animation: progress_heart 200ms linear;
+            animation: progress_heart 200ms linear;
   }
   .card_image {
     position: relative;
@@ -702,8 +702,8 @@ h2 {
     background-image: linear-gradient(to top, #FF79DA, #9356DC);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-animation: progress_heart 300ms linear;
-            animation: progress_heart 300ms linear;
+    -webkit-animation: progress_heart 200ms linear;
+            animation: progress_heart 200ms linear;
   }
   .card_image {
     position: relative;
@@ -1047,8 +1047,8 @@ h2 {
     background-image: linear-gradient(to top, #FF79DA, #9356DC);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-animation: progress_heart 300ms linear;
-            animation: progress_heart 300ms linear;
+    -webkit-animation: progress_heart 200ms linear;
+            animation: progress_heart 200ms linear;
   }
   .card_image {
     position: relative;
