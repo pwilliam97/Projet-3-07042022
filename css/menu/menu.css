@@ -311,27 +311,38 @@ main .commander:hover {
 .section_menu > div > nav {
   width: 100%;
   padding: 2% 0 2% 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.section_menu > div > nav > h3 {
+.section_menu > div > nav > div {
+  width: 90%;
+}
+
+.section_menu > div > nav > div > h3 {
+  width: 100%;
   font-size: 120%;
   margin: 0;
 }
 
-.section_menu > div > nav > p {
+.section_menu > div > nav > div > p {
   margin: 0;
   font-size: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.section_menu > div > nav > p > span {
+.section_menu > div > nav > span {
+  width: 10%;
   font-weight: bold;
-  margin-right: 3%;
 }
 
 /*FOOTER*/
